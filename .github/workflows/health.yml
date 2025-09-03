@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: Curl health
         run: |
-          curl -fsS "elaborate-snickerdoodle-5ec99b.netlify.app/.netlify/functions/health" | jq .
+          curl -fsS "https://elaborate-snickerdoodle-5ec99b.netlify.app/.netlify/functions/health" | jq .
