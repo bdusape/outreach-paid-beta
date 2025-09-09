@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "outreach-paid-beta"   # or your actual static dir; if purely static, repo root is fine
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/paid"
+  to = "/paid.html"
+  status = 200
+
+[[redirects]]
+  from = "/api/send"
+  to = "/.netlify/functions/email"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
