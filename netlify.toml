@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "."    # Publish from root directory since we have static files here
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/paid"
+  to = "/paid.html"
+  status = 200
+  
+[[redirects]]
+  from = "/api/send"
+  to = "/.netlify/functions/email"
+  status = 200
+  
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
