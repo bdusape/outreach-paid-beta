@@ -1,4 +1,5 @@
 # Local Netlify folder
 .netlify
+
 # Environment variables (contains secrets)
 .env

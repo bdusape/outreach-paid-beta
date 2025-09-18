@@ -1,0 +1,31 @@
+⬥ Injecting environment variable values for all scopes
+⬥ Ignored general context env var: LANG (defined in process)
+⬥ Ignored project settings env var: APP_BASE_URL (defined in .env file)
+⬥ Ignored project settings env var: CSV_PATH (defined in .env file)
+⬥ Ignored project settings env var: DEBUG_MODE (defined in .env file)
+⬥ Ignored project settings env var: OUTBOUND_FROM_EMAIL (defined in .env file)
+⬥ Ignored project settings env var: OUTBOUND_FROM_NAME (defined in .env file)
+⬥ Ignored project settings env var: RESEND_API_KEY (defined in .env file)
+⬥ Ignored project settings env var: SENDGRID_API_KEY (defined in .env file)
+⬥ Ignored project settings env var: STRIPE_PAYMENT_LINK (defined in .env file)
+⬥ Injected project settings env vars: APOLLO_KEY
+⬥ Injected .env file env vars: APP_BASE_URL, CSV_PATH, DEBUG_MODE, OUTBOUND_FROM_EMAIL, OUTBOUND_FROM_NAME, RESEND_API_KEY, SENDGRID_API_KEY, STRIPE_PAYMENT_LINK, APOLLO_API_KEY
+⬥ No app server detected. Using simple static server
+⬥ Running static server from "outreach-paid-beta"
+⬥ Setting up local dev server
+
+⬥ Static server listening to 3999
+
+   ╭─────────────────────── ⬥  ────────────────────────╮
+   │                                                   │
+   │   Local dev server ready: http://localhost:8888   │
+   │                                                   │
+   ╰───────────────────────────────────────────────────╯
+
+⬥ Loaded function health in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+(node:18793) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Request from ::1: GET /.netlify/functions/health
+Response with status 200 in 101 ms.
+Request from ::1: GET /.netlify/functions/health
+Response with status 200 in 3 ms.
