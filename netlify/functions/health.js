@@ -1,6 +1,6 @@
 export async function handler() {
   const ok =
-    !!process.env.APOLLO_API_KEY &&
+    !!process.env.APOLLO_KEY &&
     !!process.env.STRIPE_PAYMENT_LINK &&
     !!process.env.OUTBOUND_FROM_EMAIL;
   return {
