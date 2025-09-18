@@ -2,12 +2,12 @@
 # Copy this file to `.env` and fill in real values
 
 # Apollo Places API key (for fetching real leads)
-APOLLO_KEY=q_d2bBVfDMTPSHkOB8mbhA
+APOLLO_KEY=your_apollo_api_key_here
 
 # Email sending service (choose one)
-RESEND_API_KEY=re_H7EmkHzY_35Evxg2J4cG7Qfp5eMT2BkGk
+RESEND_API_KEY=your_resend_api_key_here
 # or
-SENDGRID_API_KEY=your_sendgrid_api_key_here 
+SENDGRID_API_KEY=your_sendgrid_api_key_here
 
 # Stripe Payment
 STRIPE_PAYMENT_LINK=https://buy.stripe.com/eVq9AU9M99ICctr1qA9EI01
