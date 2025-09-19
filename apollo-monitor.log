@@ -1,0 +1,234 @@
+[2025-09-09T06:20:58.720Z] 🚀 Starting Apollo email unlock monitoring...
+[2025-09-09T06:20:58.750Z] 📍 Endpoint: https://elaborate-snickerdoodle-5ec99b.netlify.app/.netlify/functions/leads
+[2025-09-09T06:20:58.751Z] 🔍 Query: "marketing agencies in Denver"
+[2025-09-09T06:20:58.752Z] ⏰ Check interval: 3 minutes
+[2025-09-09T06:20:58.752Z] 📝 Log file: /Users/OUTREACH PAID BETA/outreach-paid-beta/apollo-monitor.log
+[2025-09-09T06:20:58.752Z] 
+[2025-09-09T06:20:59.422Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:20:59.423Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:20:59.424Z] 🔒 Locked emails: 5
+[2025-09-09T06:20:59.425Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:20:59.426Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:20:59.426Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:20:59.427Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:20:59.428Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:20:59.428Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:20:59.432Z] 
+[2025-09-09T06:20:59.432Z] 📡 Monitoring active. Press Ctrl+C to stop.
+[2025-09-09T06:20:59.433Z] 
+[2025-09-09T06:21:18.055Z] 
+[2025-09-09T06:21:18.055Z] 🛑 Monitoring stopped by user
+[2025-09-09T06:21:28.241Z] 🚀 Starting Apollo email unlock monitoring...
+[2025-09-09T06:21:28.245Z] 📍 Endpoint: https://elaborate-snickerdoodle-5ec99b.netlify.app/.netlify/functions/leads
+[2025-09-09T06:21:28.245Z] 🔍 Query: "marketing agencies in Denver"
+[2025-09-09T06:21:28.245Z] ⏰ Check interval: 3 minutes
+[2025-09-09T06:21:28.245Z] 📝 Log file: /Users/OUTREACH PAID BETA/outreach-paid-beta/apollo-monitor.log
+[2025-09-09T06:21:28.245Z] 
+[2025-09-09T06:21:28.920Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:21:28.920Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:21:28.921Z] 🔒 Locked emails: 5
+[2025-09-09T06:21:28.921Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:21:28.921Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:21:28.922Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:21:28.922Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:21:28.922Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:21:28.922Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:21:28.922Z] 
+[2025-09-09T06:21:28.922Z] 📡 Monitoring active. Press Ctrl+C to stop.
+[2025-09-09T06:21:28.923Z] 
+[2025-09-09T06:23:07.436Z] 
+[2025-09-09T06:23:07.436Z] 🛑 Monitoring stopped
+[2025-09-09T06:23:16.443Z] 🚀 Starting Apollo email unlock monitoring...
+[2025-09-09T06:23:16.445Z] 📍 Endpoint: https://elaborate-snickerdoodle-5ec99b.netlify.app/.netlify/functions/leads
+[2025-09-09T06:23:16.446Z] 🔍 Query: "marketing agencies in Denver"
+[2025-09-09T06:23:16.446Z] ⏰ Check interval: 3 minutes
+[2025-09-09T06:23:16.446Z] 📝 Log file: /Users/OUTREACH PAID BETA/outreach-paid-beta/apollo-monitor.log
+[2025-09-09T06:23:16.446Z] 🔔 Desktop notifications: ENABLED
+[2025-09-09T06:23:16.447Z] 
+[2025-09-09T06:23:17.342Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:23:17.342Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:23:17.343Z] 🔒 Locked emails: 5
+[2025-09-09T06:23:17.343Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:23:17.344Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:23:17.344Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:23:17.344Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:23:17.344Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:23:17.345Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:23:17.346Z] 
+[2025-09-09T06:23:17.346Z] 📡 Monitoring active. Press Ctrl+C to stop.
+[2025-09-09T06:23:17.347Z] 
+[2025-09-09T06:26:17.351Z] 
+[2025-09-09T06:26:17.353Z] 🔄 Performing scheduled check...
+[2025-09-09T06:26:17.980Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:26:17.981Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:26:17.982Z] 🔒 Locked emails: 5
+[2025-09-09T06:26:17.982Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:26:17.983Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:26:17.983Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:26:17.983Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:26:17.984Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:26:17.984Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:27:37.778Z] 
+[2025-09-09T06:27:37.781Z] 🛑 Monitoring stopped
+[2025-09-09T06:28:34.107Z] 🚀 Starting Apollo email unlock monitoring...
+[2025-09-09T06:28:34.122Z] 📍 Endpoint: https://elaborate-snickerdoodle-5ec99b.netlify.app/.netlify/functions/leads
+[2025-09-09T06:28:34.122Z] 🔍 Query: "marketing agencies in Denver"
+[2025-09-09T06:28:34.123Z] ⏰ Check interval: 3 minutes
+[2025-09-09T06:28:34.124Z] 📝 Log file: /Users/OUTREACH PAID BETA/outreach-paid-beta/apollo-monitor.log
+[2025-09-09T06:28:34.124Z] 🔔 Desktop notifications: ENABLED
+[2025-09-09T06:28:34.124Z] 
+[2025-09-09T06:28:35.021Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:28:35.022Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:28:35.023Z] 🔒 Locked emails: 5
+[2025-09-09T06:28:35.023Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:28:35.024Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:28:35.024Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:28:35.024Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:28:35.025Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:28:35.025Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:28:35.028Z] 
+[2025-09-09T06:28:35.029Z] 📡 Monitoring active. Press Ctrl+C to stop.
+[2025-09-09T06:28:35.029Z] 
+[2025-09-09T06:31:35.033Z] 
+[2025-09-09T06:31:35.034Z] 🔄 Performing scheduled check...
+[2025-09-09T06:31:35.738Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:31:35.739Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:31:35.740Z] 🔒 Locked emails: 5
+[2025-09-09T06:31:35.740Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:31:35.740Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:31:35.741Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:31:35.741Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:31:35.741Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:31:35.741Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:34:35.037Z] 
+[2025-09-09T06:34:35.040Z] 🔄 Performing scheduled check...
+[2025-09-09T06:34:35.455Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:34:35.455Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:34:35.456Z] 🔒 Locked emails: 5
+[2025-09-09T06:34:35.457Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:34:35.457Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:34:35.457Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:34:35.458Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:34:35.458Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:34:35.458Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:37:34.762Z] 
+[2025-09-09T06:37:34.764Z] 🔄 Performing scheduled check...
+[2025-09-09T06:37:35.404Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:37:35.404Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:37:35.404Z] 🔒 Locked emails: 5
+[2025-09-09T06:37:35.405Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:37:35.405Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:37:35.405Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:37:35.405Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:37:35.405Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:37:35.406Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:40:34.764Z] 
+[2025-09-09T06:40:34.767Z] 🔄 Performing scheduled check...
+[2025-09-09T06:40:35.303Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:40:35.304Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:40:35.305Z] 🔒 Locked emails: 5
+[2025-09-09T06:40:35.305Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:40:35.305Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:40:35.306Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:40:35.306Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:40:35.306Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:40:35.307Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:43:34.772Z] 
+[2025-09-09T06:43:34.775Z] 🔄 Performing scheduled check...
+[2025-09-09T06:43:35.459Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:43:35.460Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:43:35.460Z] 🔒 Locked emails: 5
+[2025-09-09T06:43:35.461Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:43:35.461Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:43:35.461Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:43:35.462Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:43:35.462Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:43:35.463Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:46:34.773Z] 
+[2025-09-09T06:46:34.775Z] 🔄 Performing scheduled check...
+[2025-09-09T06:46:35.378Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:46:35.378Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:46:35.379Z] 🔒 Locked emails: 5
+[2025-09-09T06:46:35.379Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:46:35.379Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:46:35.379Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:46:35.380Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:46:35.380Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:46:35.380Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:49:34.775Z] 
+[2025-09-09T06:49:34.778Z] 🔄 Performing scheduled check...
+[2025-09-09T06:49:35.296Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:49:35.297Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:49:35.297Z] 🔒 Locked emails: 5
+[2025-09-09T06:49:35.298Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:49:35.298Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:49:35.299Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:49:35.299Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:49:35.299Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:49:35.300Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:52:34.777Z] 
+[2025-09-09T06:52:34.778Z] 🔄 Performing scheduled check...
+[2025-09-09T06:52:35.386Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:52:35.387Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:52:35.387Z] 🔒 Locked emails: 5
+[2025-09-09T06:52:35.388Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:52:35.388Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:52:35.388Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:52:35.389Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:52:35.389Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:52:35.389Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:55:34.780Z] 
+[2025-09-09T06:55:34.783Z] 🔄 Performing scheduled check...
+[2025-09-09T06:55:36.060Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:55:36.060Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:55:36.061Z] 🔒 Locked emails: 5
+[2025-09-09T06:55:36.062Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:55:36.063Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:55:36.064Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:55:36.065Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:55:36.065Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:55:36.065Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T06:58:34.783Z] 
+[2025-09-09T06:58:34.784Z] 🔄 Performing scheduled check...
+[2025-09-09T06:58:35.445Z] 📊 Status Check: 5 leads total
+[2025-09-09T06:58:35.446Z] 🔓 Unlocked emails: 0
+[2025-09-09T06:58:35.446Z] 🔒 Locked emails: 5
+[2025-09-09T06:58:35.446Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T06:58:35.446Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T06:58:35.446Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T06:58:35.447Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T06:58:35.447Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T06:58:35.447Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T07:01:34.786Z] 
+[2025-09-09T07:01:34.790Z] 🔄 Performing scheduled check...
+[2025-09-09T07:01:35.389Z] 📊 Status Check: 5 leads total
+[2025-09-09T07:01:35.390Z] 🔓 Unlocked emails: 0
+[2025-09-09T07:01:35.390Z] 🔒 Locked emails: 5
+[2025-09-09T07:01:35.391Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T07:01:35.392Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T07:01:35.392Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T07:01:35.393Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T07:01:35.394Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T07:01:35.394Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T07:04:34.789Z] 
+[2025-09-09T07:04:34.790Z] 🔄 Performing scheduled check...
+[2025-09-09T07:04:35.416Z] 📊 Status Check: 5 leads total
+[2025-09-09T07:04:35.417Z] 🔓 Unlocked emails: 0
+[2025-09-09T07:04:35.418Z] 🔒 Locked emails: 5
+[2025-09-09T07:04:35.418Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T07:04:35.419Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T07:04:35.419Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T07:04:35.419Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T07:04:35.420Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T07:04:35.420Z]   • Dean Cary (Compass Global): President/CEO/Owner
+[2025-09-09T07:07:34.792Z] 
+[2025-09-09T07:07:34.795Z] 🔄 Performing scheduled check...
+[2025-09-09T07:07:35.457Z] 📊 Status Check: 5 leads total
+[2025-09-09T07:07:35.458Z] 🔓 Unlocked emails: 0
+[2025-09-09T07:07:35.459Z] 🔒 Locked emails: 5
+[2025-09-09T07:07:35.459Z] ⏳ Still waiting for these emails to unlock:
+[2025-09-09T07:07:35.460Z]   • Jack Martin (Abbotts Cleanup & Restoration): Founder, Owner & Chief Executive Officer
+[2025-09-09T07:07:35.460Z]   • Eboni Blake (EBI Labs): Owner Founder and CEO
+[2025-09-09T07:07:35.461Z]   • Reagan Yeomans (The Health Center - THC): Founder, Owner, CEO
+[2025-09-09T07:07:35.462Z]   • Angie Marshall (Cage Marshall Consulting): CEO | President | Owner
+[2025-09-09T07:07:35.462Z]   • Dean Cary (Compass Global): President/CEO/Owner
