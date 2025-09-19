@@ -29,3 +29,5 @@ Request from ::1: GET /.netlify/functions/health
 Response with status 200 in 101 ms.
 Request from ::1: GET /.netlify/functions/health
 Response with status 200 in 3 ms.
+⬥ Loaded function leads in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function send in Lambda compatibility mode (https://ntl.fyi/lambda-compat)

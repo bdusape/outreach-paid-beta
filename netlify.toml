@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "outreach-paid-beta"   # or your actual static dir; if purely static, repo root is fine
+  publish = "."   # Use repository root for functions-only deployment
 
 [functions]
   directory = "netlify/functions"

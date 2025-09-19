@@ -1,0 +1,73 @@
+{
+  "timestamp": "2025-09-09T07:07:35.462Z",
+  "totalLeads": 5,
+  "unlockedCount": 0,
+  "lockedCount": 5,
+  "leads": [
+    {
+      "id": "68306fdab7f5170001e79293",
+      "name": "Jack Martin",
+      "first_name": "Jack",
+      "last_name": "Martin",
+      "email": "email_not_unlocked@domain.com",
+      "title": "Founder, Owner & Chief Executive Officer",
+      "company": "Abbotts Cleanup & Restoration",
+      "industry": "marketing agencies",
+      "location": "undefined, undefined",
+      "linkedin_url": "http://www.linkedin.com/in/jackcmartin",
+      "enrichment_source": "apollo"
+    },
+    {
+      "id": "63f84a8a254a0b0001cbd27a",
+      "name": "Eboni Blake",
+      "first_name": "Eboni",
+      "last_name": "Blake",
+      "email": "email_not_unlocked@domain.com",
+      "title": "Owner Founder and CEO",
+      "company": "EBI Labs",
+      "industry": "marketing agencies",
+      "location": "undefined, undefined",
+      "linkedin_url": "http://www.linkedin.com/in/eboni-blake-843703",
+      "enrichment_source": "apollo"
+    },
+    {
+      "id": "5e8205a214064800c2ae0e97",
+      "name": "Reagan Yeomans",
+      "first_name": "Reagan",
+      "last_name": "Yeomans",
+      "email": "email_not_unlocked@domain.com",
+      "title": "Founder, Owner, CEO",
+      "company": "The Health Center - THC",
+      "industry": "marketing agencies",
+      "location": "undefined, undefined",
+      "linkedin_url": "http://www.linkedin.com/in/reagan-yeomans-757978138",
+      "enrichment_source": "apollo"
+    },
+    {
+      "id": "66fa6004b8b4ca00015db82f",
+      "name": "Angie Marshall",
+      "first_name": "Angie",
+      "last_name": "Marshall",
+      "email": "email_not_unlocked@domain.com",
+      "title": "CEO | President | Owner",
+      "company": "Cage Marshall Consulting",
+      "industry": "marketing agencies",
+      "location": "undefined, undefined",
+      "linkedin_url": "http://www.linkedin.com/in/angie-marshall-4a594720",
+      "enrichment_source": "apollo"
+    },
+    {
+      "id": "54aabdf27468690b75472616",
+      "name": "Dean Cary",
+      "first_name": "Dean",
+      "last_name": "Cary",
+      "email": "email_not_unlocked@domain.com",
+      "title": "President/CEO/Owner",
+      "company": "Compass Global",
+      "industry": "marketing agencies",
+      "location": "undefined, undefined",
+      "linkedin_url": "http://www.linkedin.com/in/dean-cary-57b24176",
+      "enrichment_source": "apollo"
+    }
+  ]
+}
