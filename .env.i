@@ -10,7 +10,7 @@ RESEND_API_KEY=your_resend_api_key_here
 SENDGRID_API_KEY=your_sendgrid_api_key_here
 
 # Stripe Payment
-STRIPE_PAYMENT_LINK=your_stripe_payment_link_here
+STRIPE_PAYMENT_LINK=https://buy.stripe.com/eVq9AU9M99ICctr1qA9EI01
 
 # Outbound email identity
 OUTBOUND_FROM_EMAIL=outreach@luntra.one
