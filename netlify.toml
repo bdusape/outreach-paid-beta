@@ -1,5 +1,4 @@
 [build]
-  command = "npm run build"
   publish = "."   # Use repository root for functions-only deployment
 
 [functions]
@@ -11,6 +10,16 @@
   status = 200
 
 [[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
   from = "/api/send"
   to = "/.netlify/functions/email"
   status = 200
@@ -19,5 +28,3 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
-
-publish = "."
