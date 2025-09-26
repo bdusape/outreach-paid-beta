@@ -1,27 +1,23 @@
 {
   "name": "outreach-paid-beta",
   "version": "1.0.0",
-  "type": "module",
-  "description": "LUNTRA Outreach Paid Beta - Netlify Functions",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "netlify dev",
-    "deploy": "netlify deploy --prod",
-    "build": "echo 'No build step required'",
-    "test": "node --test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "netlify",
-    "functions",
-    "serverless",
-    "outreach",
-    "email"
-  ],
-  "author": "LUNTRA",
-  "license": "MIT",
-  "engines": {
-    "node": ">=18.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdusape/outreach-paid-beta.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bdusape/outreach-paid-beta/issues"
+  },
+  "homepage": "https://github.com/bdusape/outreach-paid-beta#readme",
   "dependencies": {
     "axios": "^1.12.2"
   }

@@ -3,513 +3,1256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUNTRA Outreach - Lead Search</title>
+    <title>Luntra Outreach - AI-Powered Lead Generation</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- Microsoft Clarity tracking code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "psayzqwu4l");
+    </script>
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
             background: #f8fafc;
         }
         
-        .header {
-            text-align: center;
-            margin-bottom: 2rem;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .search-container {
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            margin-right: 0.5rem;
+            font-size: 2rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .upgrade-btn {
+            background: #3b82f6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .upgrade-btn:hover {
+            background: #2563eb;
+        }
+        
+        .paid-badge {
+            background: #10b981;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        main {
+            min-height: calc(100vh - 140px);
+            padding: 2rem 0;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-section {
             background: white;
-            padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
             margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         
         .search-form {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         
-        .search-input {
+        .form-group {
             flex: 1;
-            padding: 12px 16px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 16px;
         }
         
-        .search-input:focus {
-            outline: none;
-            border-color: #3b82f6;
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
         }
         
         .btn {
-            padding: 12px 24px;
+            background: #3b82f6;
+            color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s;
         }
         
-        .btn-primary {
-            background: #3b82f6;
-            color: white;
-        }
-        
-        .btn-primary:hover {
+        .btn:hover {
             background: #2563eb;
+            transform: translateY(-1px);
         }
         
-        .btn-secondary {
-            background: #64748b;
-            color: white;
+        .btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
         }
         
-        .btn-secondary:hover {
-            background: #475569;
+        .leads-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         
-        .quick-actions {
+        .leads-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .lead-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #fafafa;
+        }
+        
+        .lead-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .lead-info {
+            flex: 1;
+        }
+        
+        .lead-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.25rem;
+        }
+        
+        .lead-details {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .lead-actions {
             display: flex;
             gap: 0.5rem;
-            flex-wrap: wrap;
+            margin-left: 1rem;
         }
         
         .btn-small {
-            padding: 8px 16px;
-            font-size: 14px;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            border-radius: 4px;
         }
         
-        .results-container {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+        .btn-email {
+            background: #10b981;
+            color: white;
         }
         
-        .results-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid #e2e8f0;
-            background: #f8fafc;
+        .btn-email:hover {
+            background: #059669;
+        }
+        
+        .btn-email:disabled {
+            background: #d1d5db;
+            color: #9ca3af;
+            cursor: not-allowed;
         }
         
         .loading {
             text-align: center;
             padding: 2rem;
-            color: #64748b;
+            color: #6b7280;
         }
         
         .error {
-            text-align: center;
-            padding: 2rem;
-            color: #dc2626;
             background: #fef2f2;
             border: 1px solid #fecaca;
-            border-radius: 8px;
-            margin: 1rem;
+            color: #dc2626;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
         }
         
-        .leads-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .leads-table th,
-        .leads-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        .leads-table th {
-            background: #f8fafc;
-            font-weight: 600;
-            color: #374151;
-        }
-        
-        .leads-table tr:hover {
-            background: #f9fafb;
-        }
-        
-        .status-badge {
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-        
-        .status-new {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-        
-        .status-contacted {
-            background: #dcfce7;
+        .success {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
             color: #166534;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        footer {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        
+        .footer-section p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #e5e7eb;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #3b82f6;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .search-form {
+                flex-direction: column;
+            }
+            
+            .lead-header {
+                flex-direction: column;
+            }
+            
+            .lead-actions {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
         }
         
         .hidden {
             display: none;
         }
         
-        .email-btn {
-            background: #3b82f6;
-            color: white;
-            border: none;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s;
+        .template-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         
-        .email-btn:hover {
-            background: #2563eb;
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .template-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .template-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+        
+        .template-card.selected {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+        
+        .template-name {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .template-preview {
+            font-size: 0.875rem;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+        
+        .email-preview-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        /* Ensure modal is hidden by default */
+        #email-preview-modal {
+            display: none;
+        }
+        
+        #email-preview-modal:not(.hidden) {
+            display: flex;
+        }
+        
+        .email-preview-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .email-preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 1rem;
+        }
+        
+        .email-field {
+            margin-bottom: 1rem;
+        }
+        
+        .email-field label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+        
+        .email-field input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .email-field textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            min-height: 200px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .email-preview-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 1rem;
+        }
+        
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b7280;
+            padding: 0;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-btn:hover {
+            color: #374151;
+        }
+        
+        .data-source {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        
+        .source-hunter {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .source-apollo {
+            background: #f3e8ff;
+            color: #7c3aed;
+        }
+        
+        .confidence-badge {
+            background: #10b981;
+            color: white;
+            padding: 0.125rem 0.375rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🎯 LUNTRA Outreach</h1>
-        <p>AI-Powered Lead Generation & Outreach</p>
-    </div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">🚀</span>
+                    <span>Luntra</span>
+                </a>
+                <nav class="nav-menu">
+                    <div id="payment-status">
+                        <div id="discount-section" class="hidden" style="display: flex; align-items: center; gap: 0.5rem; margin-right: 1rem;">
+                            <input type="text" id="discount-code" placeholder="Discount code" 
+                                   style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 4px; font-size: 0.875rem; width: 120px;">
+                            <button onclick="applyDiscount()" class="btn" style="padding: 0.5rem 0.75rem; font-size: 0.875rem;">
+                                Apply
+                            </button>
+                        </div>
+                        <a href="#" class="upgrade-btn" id="upgrade-link" onclick="showDiscountSection(event)">
+                            Upgrade to Pro
+                        </a>
+                        <span class="paid-badge hidden" id="paid-badge">Pro Member</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-    <div class="search-container">
-        <form class="search-form" id="searchForm">
-            <input 
-                type="text" 
-                class="search-input" 
-                id="searchQuery"
-                placeholder="Search for leads... (e.g., 'software companies in San Francisco')"
-                value=""
-            >
-            <button type="submit" class="btn btn-primary" id="searchBtn">
-                🔍 Search Leads
-            </button>
-        </form>
-        
-        <div class="quick-actions">
-            <button class="btn btn-secondary btn-small" onclick="quickSearch('tech startups')">
-                💻 Tech Startups
-            </button>
-            <button class="btn btn-secondary btn-small" onclick="quickSearch('marketing agencies')">
-                📈 Marketing Agencies
-            </button>
-            <button class="btn btn-secondary btn-small" onclick="quickSearch('e-commerce companies')">
-                🛒 E-commerce
-            </button>
-            <button class="btn btn-secondary btn-small" onclick="quickSearch('SaaS companies')">
-                ☁️ SaaS Companies
-            </button>
-        </div>
-    </div>
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Find & Contact Your Ideal Leads</h1>
+                <p>AI-powered lead generation with personalized outreach. Discover prospects and send targeted emails that convert.</p>
+            </section>
 
-    <!-- Email Composer -->
-    <div class="search-container" id="emailComposer" style="display: none;">
-        <h3>📧 Send Outreach Email</h3>
-        <form id="emailForm">
-            <div style="margin-bottom: 1rem;">
-                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">To:</label>
-                <input type="email" id="emailTo" class="search-input" placeholder="recipient@company.com" required>
-            </div>
-            <div style="margin-bottom: 1rem;">
-                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Subject:</label>
-                <input type="text" id="emailSubject" class="search-input" placeholder="Partnership Opportunity" required>
-            </div>
-            <div style="margin-bottom: 1rem;">
-                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message:</label>
-                <textarea id="emailBody" style="width: 100%; min-height: 200px; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: inherit; resize: vertical;" placeholder="Write your personalized outreach message here..." required></textarea>
-            </div>
-            <div style="display: flex; gap: 1rem;">
-                <button type="submit" class="btn btn-primary">📤 Send Email</button>
-                <button type="button" class="btn btn-secondary" onclick="hideEmailComposer()">Cancel</button>
-            </div>
-        </form>
-        
-        <!-- Email Stats -->
-        <div style="margin-top: 1rem; padding: 1rem; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
-            <p style="margin: 0; font-size: 14px; color: #64748b;">
-                📊 Emails sent this session: <span id="emailCount">0</span> | 
-                Payment status: <span id="paymentStatus" style="font-weight: 500;">Free Tier</span>
-            </p>
-        </div>
-    </div>
+            <section class="search-section">
+                <h2>Search for Leads</h2>
+                <form class="search-form" id="search-form">
+                    <div class="form-group">
+                        <label for="search-type">Search Type</label>
+                        <select id="search-type" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem;">
+                            <option value="industry">🔍 Industry Search (Apollo)</option>
+                            <option value="domain">🎯 Company Domain (Hunter.io)</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="industry-group">
+                        <label for="industry">Industry</label>
+                        <input type="text" id="industry" name="industry" placeholder="e.g., cleaners, restaurants, AI" value="cleaners">
+                    </div>
+                    <div class="form-group" id="domain-group" style="display: none;">
+                        <label for="domain">Company Domain</label>
+                        <input type="text" id="domain" name="domain" placeholder="e.g., mailchimp.com, shopify.com, stripe.com">
+                    </div>
+                    <div class="form-group" id="location-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="e.g., Charlotte, San Francisco" value="Charlotte">
+                    </div>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <button type="submit" class="btn" id="search-btn">
+                            🔍 Search Leads
+                        </button>
+                    </div>
+                </form>
+            </section>
 
-    <div class="results-container" id="resultsContainer">
-        <div class="results-header">
-            <h2>Search Results</h2>
-            <p id="resultsCount">Enter a search query to find leads</p>
+            <section class="template-section">
+                <h2>📝 Choose Email Template</h2>
+                <p>Select a template for your outreach emails. You can customize the message before sending.</p>
+                <div class="template-grid" id="template-grid">
+                    <!-- Templates will be loaded here -->
+                </div>
+            </section>
+
+            <section class="leads-section">
+                <h2>Search Results</h2>
+                <div id="leads-container">
+                    <div class="loading">
+                        <p>👋 Search for leads above to get started</p>
+                    </div>
+                </div>
+            </section>
         </div>
-        
-        <div id="loadingState" class="loading hidden">
-            <p>🔄 Searching for leads...</p>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🚀 Luntra</h3>
+                    <p>AI-powered outreach automation for modern businesses.</p>
+                    <p>Transform your lead generation with smart, personalized campaigns.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Product</h3>
+                    <p><a href="#features">Features</a></p>
+                    <p><a href="#pricing">Pricing</a></p>
+                    <p><a href="#integrations">Integrations</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <p><a href="mailto:support@luntra.one">support@luntra.one</a></p>
+                    <p><a href="#help">Help Center</a></p>
+                    <p><a href="#docs">Documentation</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <p><a href="#about">About</a></p>
+                    <p><a href="#blog">Blog</a></p>
+                    <p><a href="#careers">Careers</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luntra. All rights reserved. | <a href="mailto:support@luntra.one">Contact Support</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a></p>
+            </div>
         </div>
-        
-        <div id="errorState" class="error hidden">
-            <p id="errorMessage">Something went wrong. Please try again.</p>
-        </div>
-        
-        <div id="resultsTable" class="hidden">
-            <table class="leads-table">
-                <thead>
-                    <tr>
-                        <th>Company</th>
-                        <th>Contact</th>
-                        <th>Title</th>
-                        <th>Industry</th>
-                        <th>Location</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="leadsTableBody">
-                    <!-- Leads will be populated here -->
-                </tbody>
-            </table>
+    </footer>
+
+    <!-- Email Preview Modal -->
+    <div class="email-preview-modal hidden" id="email-preview-modal">
+        <div class="email-preview-content">
+            <div class="email-preview-header">
+                <h3>📧 Email Preview & Customization</h3>
+                <button class="close-btn" onclick="closeEmailPreview()">&times;</button>
+            </div>
+            
+            <div class="email-field">
+                <label for="preview-to">To:</label>
+                <input type="text" id="preview-to" readonly>
+            </div>
+            
+            <div class="email-field">
+                <label for="preview-subject">Subject:</label>
+                <input type="text" id="preview-subject">
+            </div>
+            
+            <div class="email-field">
+                <label for="preview-body">Message:</label>
+                <textarea id="preview-body"></textarea>
+            </div>
+            
+            <div class="email-preview-actions">
+                <button class="btn btn-secondary" onclick="closeEmailPreview()">Cancel</button>
+                <button class="btn" onclick="sendEmailFromPreview()" id="send-from-preview-btn">📧 Send Email</button>
+            </div>
         </div>
     </div>
 
     <script>
-        // Email composer functions
-        function showEmailComposer(prefillEmail = '', prefillSubject = '') {
-            document.getElementById('emailComposer').style.display = 'block';
-            if (prefillEmail) document.getElementById('emailTo').value = prefillEmail;
-            if (prefillSubject) document.getElementById('emailSubject').value = prefillSubject;
-            document.getElementById('emailComposer').scrollIntoView({ behavior: 'smooth' });
-        }
+        // Configuration
+        const API_BASE = window.location.origin;
+        let currentLeads = [];
+        let selectedTemplate = null;
+        let currentLeadForPreview = null;
+        let emailsSent = 0;
+        let hasPaid = false;
+        let appConfig = null;
         
-        function hideEmailComposer() {
-            document.getElementById('emailComposer').style.display = 'none';
+        // Email Templates
+        const emailTemplates = [
+            {
+                id: 'professional',
+                name: 'Professional Introduction',
+                subject: 'Quick intro: {company} + {service}',
+                preview: 'Hi {name}, I hope this message finds you well. I noticed {company} is in the {industry} space...',
+                body: `Hi {firstName},
+
+I hope this message finds you well. I noticed {company} is in the {industry} space, and I wanted to reach out about an opportunity that could help streamline your operations.
+
+{service} helps businesses like yours automate outreach and generate qualified leads more efficiently. We've helped similar companies increase their response rates by 40%.
+
+Would you be open to a brief 15-minute call this week to discuss how we could help {company}?
+
+Best regards,
+The Luntra Team
+
+---
+Contact us: support@luntra.one`
+            },
+            {
+                id: 'partnership',
+                name: 'Partnership Proposal',
+                subject: 'Partnership opportunity with {company}',
+                preview: 'Hello {name}, I have been following {company} work in {industry} and I am impressed by your approach...',
+                body: `Hello {firstName},
+
+I have been following {company} work in {industry} and I am impressed by your approach to the market.
+
+I believe there's potential for a mutually beneficial partnership between {company} and Luntra. Our AI-powered outreach platform could complement your existing services perfectly.
+
+Would you be interested in exploring how we could work together to serve your clients better?
+
+I would love to set up a brief call to discuss the possibilities.
+
+Looking forward to hearing from you,
+The Luntra Team
+
+---
+Contact us: support@luntra.one`
+            },
+            {
+                id: 'service_offer',
+                name: 'Service Offer',
+                subject: 'Help {company} scale outreach efforts',
+                preview: 'Hi {name}, I specialize in helping {industry} companies like {company} achieve their growth objectives...',
+                body: `Hi {firstName},
+
+I hope you're doing well. I specialize in helping {industry} companies like {company} achieve their growth objectives through smarter outreach automation.
+
+Here's what we've helped similar businesses accomplish:
+• 40% increase in response rates
+• 60% reduction in manual outreach time
+• 3x more qualified leads generated monthly
+
+I would love to show you how {service} could specifically benefit {company}.
+
+Are you available for a quick 15-minute demo this week?
+
+Best,
+The Luntra Team
+
+---
+Contact us: support@luntra.one`
+            },
+            {
+                id: 'follow_up',
+                name: 'Follow-up Message',
+                subject: 'Following up on {service} for {company}',
+                preview: 'Hi {name}, I wanted to follow up on my previous message about how {service} could help {company}...',
+                body: `Hi {firstName},
+
+I wanted to follow up on my previous message about how Luntra could help {company} scale your outreach efforts.
+
+I understand you're probably busy, but I genuinely believe our AI-powered platform could make a significant impact on your {industry} business.
+
+Would a brief 10-minute call work better for you? I am happy to work around your schedule.
+
+Alternatively, I can send you a quick case study showing how we helped a similar {industry} company increase their leads by 200%.
+
+What works best for you?
+
+Best regards,
+The Luntra Team
+
+---
+Contact us: support@luntra.one`
+            }
+        ];
+
+        // Check payment status on page load
+        function checkPaymentStatus() {
+            // Check cookie
+            const cookies = document.cookie.split(';');
+            const paidCookie = cookies.find(cookie => cookie.trim().startsWith('hasPaid='));
+            if (paidCookie && paidCookie.includes('true')) {
+                hasPaid = true;
+            }
+
+            // Check localStorage as backup
+            if (!hasPaid && localStorage.getItem('hasPaid') === 'true') {
+                hasPaid = true;
+            }
+
+            // Update UI
+            updatePaymentUI();
         }
-        
-        function updateEmailStats() {
-            const emailsSent = Number(localStorage.getItem("emailsSent") || "0");
-            const hasPaid = localStorage.getItem("hasPaid") === "true";
+
+        function updatePaymentUI() {
+            const upgradeLink = document.getElementById('upgrade-link');
+            const paidBadge = document.getElementById('paid-badge');
+
+            if (hasPaid) {
+                upgradeLink.classList.add('hidden');
+                paidBadge.classList.remove('hidden');
+            } else {
+                upgradeLink.classList.remove('hidden');
+                paidBadge.classList.add('hidden');
+                // Set upgrade link to actual Stripe payment URL
+                if (appConfig && appConfig.stripePaymentLink) {
+                    upgradeLink.href = appConfig.stripePaymentLink;
+                } else {
+                    upgradeLink.href = 'https://buy.stripe.com/eVq9AU9M99ICctr1qA9EI01'; // Fallback
+                }
+            }
+        }
+
+        // Search for leads function
+        function setupSearchForm() {
+            const searchForm = document.getElementById('search-form');
+            const searchTypeSelect = document.getElementById('search-type');
             
-            document.getElementById('emailCount').textContent = emailsSent;
-            document.getElementById('paymentStatus').textContent = hasPaid ? 'Paid ✓' : 'Free Tier';
+            // Handle search type changes
+            if (searchTypeSelect) {
+                searchTypeSelect.addEventListener('change', (e) => {
+                    const searchType = e.target.value;
+                    const industryGroup = document.getElementById('industry-group');
+                    const domainGroup = document.getElementById('domain-group');
+                    const locationGroup = document.getElementById('location-group');
+                    
+                    if (searchType === 'domain') {
+                        industryGroup.style.display = 'none';
+                        domainGroup.style.display = 'block';
+                        locationGroup.style.display = 'none';
+                        document.getElementById('industry').required = false;
+                        document.getElementById('domain').required = true;
+                    } else {
+                        industryGroup.style.display = 'block';
+                        domainGroup.style.display = 'none';
+                        locationGroup.style.display = 'block';
+                        document.getElementById('industry').required = true;
+                        document.getElementById('domain').required = false;
+                    }
+                });
+            }
+            
+            if (searchForm) {
+                searchForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const searchType = document.getElementById('search-type').value;
+                    const industry = document.getElementById('industry').value;
+                    const domain = document.getElementById('domain').value;
+                    const location = document.getElementById('location').value;
+                    const searchBtn = document.getElementById('search-btn');
+                    const leadsContainer = document.getElementById('leads-container');
+
+                    // Validate input based on search type
+                    if (searchType === 'domain') {
+                        if (!domain.trim()) {
+                            showError('Please enter a company domain (e.g., mailchimp.com)');
+                            return;
+                        }
+                        if (!domain.includes('.')) {
+                            showError('Please enter a valid domain (e.g., company.com)');
+                            return;
+                        }
+                    } else {
+                        if (!industry.trim()) {
+                            showError('Please enter an industry to search for.');
+                            return;
+                        }
+                    }
+
+                    searchBtn.disabled = true;
+                    searchBtn.textContent = searchType === 'domain' ? '🎯 Finding Contacts...' : '🔍 Searching...';
+                    leadsContainer.innerHTML = `<div class="loading"><p>${searchType === 'domain' ? '🎯 Finding contacts at ' + domain + '...' : '🔍 Searching for leads...'}</p></div>`;
+
+                    try {
+                        let response, data;
+                        
+                        if (searchType === 'domain') {
+                            // Use Hunter.io for domain-specific search
+                            response = await fetch(`${API_BASE}/.netlify/functions/hunter-simple?domain=${encodeURIComponent(domain)}&limit=10`);
+                            data = await response.json();
+                        } else {
+                            // Use Apollo for industry search  
+                            const query = location.trim() 
+                                ? `${industry} in ${location}` 
+                                : industry;
+                            response = await fetch(`${API_BASE}/.netlify/functions/leads?q=${encodeURIComponent(query)}`);
+                            data = await response.json();
+                        }
+
+                        if (response.ok) {
+                            currentLeads = data.leads || [];
+                            displayLeads(currentLeads, data.source || 'unknown');
+                            
+                            // Show search info
+                            if (searchType === 'domain' && data.message) {
+                                showSuccess(`🎯 ${data.message}`);
+                            }
+                        } else {
+                            throw new Error(data.error || 'Failed to fetch leads');
+                        }
+                    } catch (error) {
+                        console.error('Search error:', error);
+                        const errorMessage = searchType === 'domain' 
+                            ? `❌ Failed to find contacts at ${domain}: ${error.message}` 
+                            : `❌ Failed to search leads: ${error.message}`;
+                        leadsContainer.innerHTML = `<div class="error">${errorMessage}</div>`;
+                    } finally {
+                        searchBtn.disabled = false;
+                        searchBtn.textContent = '🔍 Search Leads';
+                    }
+                });
+            }
         }
-        
-        // Your sendEmail function
-        async function sendEmail(to, subject, html) {
-            const emailsSent = Number(localStorage.getItem("emailsSent") || "0");
-            const hasPaid = localStorage.getItem("hasPaid") === "true";
 
-            const r = await fetch("/api/send", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ to, subject, body: html, emailsSent, hasPaid }),
-            });
-
-            if (r.status === 402) {
-                const { payLink } = await r.json();
-                window.open(payLink, "_blank");
+        function displayLeads(leads, source = 'unknown') {
+            const leadsContainer = document.getElementById('leads-container');
+            
+            if (!leads || leads.length === 0) {
+                leadsContainer.innerHTML = '<div class="loading"><p>😕 No leads found. Try adjusting your search terms.</p></div>';
                 return;
             }
 
-            if (r.ok) {
-                localStorage.setItem("emailsSent", String(emailsSent + 1));
-                updateEmailStats();
-                alert("Email sent successfully! ✅");
-                hideEmailComposer();
-            } else {
-                const { error } = await r.json();
-                alert("Send failed: " + error);
-            }
-        }
-
-        // Your runSearch function
-        async function runSearch(query) {
-            console.log('Searching for:', query);
-            
-            try {
-                const r = await fetch(`/api/leads?q=${encodeURIComponent(query)}`);
+            const leadsHTML = leads.map((lead, index) => {
+                // Determine data source and styling
+                let dataSourceBadge = '';
+                let confidenceBadge = '';
                 
-                if (!r.ok) {
-                    throw new Error(`HTTP ${r.status}: ${r.statusText}`);
+                if (lead.enrichment_source === 'hunter') {
+                    dataSourceBadge = '<span class="data-source source-hunter">🎯 Hunter.io</span>';
+                    if (lead.confidence) {
+                        confidenceBadge = `<span class="confidence-badge">${lead.confidence}% confident</span>`;
+                    }
+                } else if (lead.enrichment_source === 'apollo') {
+                    dataSourceBadge = '<span class="data-source source-apollo">🚀 Apollo</span>';
+                } else {
+                    dataSourceBadge = '<span class="data-source source-apollo">🔍 Search</span>';
                 }
                 
-                const data = await r.json();
-                console.log('API Response:', data);
-                
-                return data.leads || data;
-            } catch (error) {
-                console.error('Search error:', error);
-                throw error;
-            }
+                return `
+                    <div class="lead-card">
+                        <div class="lead-header">
+                            <div class="lead-info">
+                                <div class="lead-name">${escapeHtml(lead.name || 'Unknown Name')}</div>
+                                <div class="lead-details">
+                                    ${lead.title ? escapeHtml(lead.title) : 'Unknown Title'} at 
+                                    ${lead.company ? escapeHtml(lead.company) : 'Unknown Company'}
+                                    ${lead.location ? `• ${escapeHtml(lead.location)}` : ''}
+                                    ${confidenceBadge}
+                                </div>
+                                ${lead.phone ? `<div class="lead-details">📞 ${escapeHtml(lead.phone)}</div>` : ''}
+                                ${lead.email ? `<div class="lead-details">📧 ${escapeHtml(lead.email)}</div>` : ''}
+                                ${lead.linkedin_url ? `<div class="lead-details">🔗 <a href="${escapeHtml(lead.linkedin_url)}" target="_blank">LinkedIn</a></div>` : ''}
+                                ${dataSourceBadge}
+                            </div>
+                            <div class="lead-actions">
+                                ${lead.email && !lead.email.includes('email_not_unlocked') ? `
+                                    <button class="btn btn-small btn-email" onclick="sendEmail(${index})">
+                                        📧 Email
+                                    </button>
+                                ` : lead.email && lead.email.includes('email_not_unlocked') ? `
+                                    <button class="btn btn-small btn-email" disabled title="Email locked - upgrade Apollo plan">
+                                        🔒 Locked
+                                    </button>
+                                ` : `
+                                    <button class="btn btn-small btn-email" disabled title="No email available">
+                                        📧 No Email
+                                    </button>
+                                `}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            leadsContainer.innerHTML = `
+                <div class="leads-grid">
+                    ${leadsHTML}
+                </div>
+            `;
         }
 
-        // UI State Management
-        function showLoading() {
-            document.getElementById('loadingState').classList.remove('hidden');
-            document.getElementById('errorState').classList.add('hidden');
-            document.getElementById('resultsTable').classList.add('hidden');
+
+        // Utility functions
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
 
         function showError(message) {
-            document.getElementById('loadingState').classList.add('hidden');
-            document.getElementById('errorState').classList.remove('hidden');
-            document.getElementById('resultsTable').classList.add('hidden');
-            document.getElementById('errorMessage').textContent = message;
-        }
-
-        function showResults(leads) {
-            document.getElementById('loadingState').classList.add('hidden');
-            document.getElementById('errorState').classList.add('hidden');
-            document.getElementById('resultsTable').classList.remove('hidden');
-            
-            // Update results count
-            const count = leads ? leads.length : 0;
-            document.getElementById('resultsCount').textContent = 
-                count > 0 ? `Found ${count} lead${count !== 1 ? 's' : ''}` : 'No leads found';
-        }
-
-        // Render leads table
-        function renderLeads(leads) {
-            const tbody = document.getElementById('leadsTableBody');
-            
-            if (!leads || leads.length === 0) {
-                tbody.innerHTML = `
-                    <tr>
-                        <td colspan="7" style="text-align: center; color: #64748b; padding: 2rem;">
-                            No leads found for this search query
-                        </td>
-                    </tr>
-                `;
-                return;
+            const existingError = document.querySelector('.error');
+            if (existingError) {
+                existingError.remove();
             }
             
-            tbody.innerHTML = leads.map(lead => {
-                const email = lead.email || lead.contact_email || '';
-                const company = lead.company || 'Unknown Company';
-                const contactName = lead.contact_name || lead.name || 'N/A';
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.innerHTML = message;
+            
+            document.querySelector('.leads-section').insertBefore(errorDiv, document.getElementById('leads-container'));
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 10000);
+        }
+
+        function showSuccess(message) {
+            const existingSuccess = document.querySelector('.success');
+            if (existingSuccess) {
+                existingSuccess.remove();
+            }
+            
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success';
+            successDiv.innerHTML = message;
+            
+            document.querySelector('.leads-section').insertBefore(successDiv, document.getElementById('leads-container'));
+            
+            setTimeout(() => {
+                successDiv.remove();
+            }, 5000);
+        }
+
+        // Template Functions
+        function loadTemplates() {
+            try {
+                const templateGrid = document.getElementById('template-grid');
+                if (!templateGrid) {
+                    console.error('Template grid element not found');
+                    return;
+                }
                 
-                return `
-                    <tr>
-                        <td><strong>${company}</strong></td>
-                        <td>${contactName}</td>
-                        <td>${lead.title || lead.job_title || 'N/A'}</td>
-                        <td>${lead.industry || 'N/A'}</td>
-                        <td>${lead.location || lead.city || 'N/A'}</td>
-                        <td>
-                            <span class="status-badge ${lead.status === 'contacted' ? 'status-contacted' : 'status-new'}">
-                                ${lead.status || 'new'}
-                            </span>
-                        </td>
-                        <td>
-                            ${email
-                                ? `<button class="email-btn" 
-                                     data-to="${email}" 
-                                     data-company="${company}">
-                                     📧 Email
-                                   </button>`
-                                : `<span style="opacity:.6">—</span>`}
-                        </td>
-                    </tr>
-                `;
-            }).join('');
+                templateGrid.innerHTML = emailTemplates.map(template => `
+                    <div class="template-card" onclick="selectTemplate('${template.id}')" id="template-${template.id}">
+                        <div class="template-name">${template.name}</div>
+                        <div class="template-preview">${template.preview}</div>
+                    </div>
+                `).join('');
+                
+                // Select first template by default
+                if (emailTemplates.length > 0) {
+                    selectTemplate(emailTemplates[0].id);
+                }
+            } catch (error) {
+                console.error('Error loading templates:', error);
+            }
         }
-
-        // Main search handler
-        async function handleSearch(query) {
-            if (!query.trim()) {
-                showError('Please enter a search query');
+        
+        function selectTemplate(templateId) {
+            // Remove previous selection
+            document.querySelectorAll('.template-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Select new template
+            const templateCard = document.getElementById(`template-${templateId}`);
+            templateCard.classList.add('selected');
+            
+            selectedTemplate = emailTemplates.find(t => t.id === templateId);
+        }
+        
+        function personalizeTemplate(template, lead) {
+            const personalizedSubject = template.subject
+                .replace('{company}', lead.company || 'your business')
+                .replace('{service}', 'Luntra')
+                .replace('{industry}', lead.industry || 'industry');
+            
+            const personalizedBody = template.body
+                .replace('{firstName}', lead.first_name || 'there')
+                .replace(/\{company\}/g, lead.company || 'your company')
+                .replace(/\{industry\}/g, lead.industry || 'your industry')
+                .replace(/\{service\}/g, 'Luntra')
+                .replace('{name}', lead.name || 'there');
+            
+            return {
+                subject: personalizedSubject,
+                body: personalizedBody
+            };
+        }
+        
+        // Email Preview Functions
+        function openEmailPreview(leadIndex) {
+            if (!selectedTemplate) {
+                showError('Please select an email template first.');
                 return;
             }
             
-            showLoading();
+            const lead = currentLeads[leadIndex];
+            currentLeadForPreview = lead;
             
-            try {
-                const leads = await runSearch(query);
-                showResults(leads);
-                renderLeads(leads);
-            } catch (error) {
-                showError(error.message || 'Failed to search leads. Please try again.');
-            }
-        }
-
-        // Quick search function for buttons
-        function quickSearch(query) {
-            document.getElementById('searchQuery').value = query;
-            handleSearch(query);
-        }
-
-        // Email form submission
-        document.getElementById('emailForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const to = document.getElementById('emailTo').value;
-            const subject = document.getElementById('emailSubject').value;
-            const body = document.getElementById('emailBody').value;
-            
-            if (!to || !subject || !body) {
-                alert('Please fill in all fields');
+            if (!lead || !lead.email) {
+                showError('No email address available for this lead.');
                 return;
             }
             
-            // Convert plain text to basic HTML
-            const html = body.replace(/\n/g, '<br>');
+            // Personalize the template
+            const personalized = personalizeTemplate(selectedTemplate, lead);
+            
+            // Fill in the preview modal
+            document.getElementById('preview-to').value = lead.email;
+            document.getElementById('preview-subject').value = personalized.subject;
+            document.getElementById('preview-body').value = personalized.body;
+            
+            // Show the modal
+            const modal = document.getElementById('email-preview-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.style.display = 'flex';
+            }
+        }
+        
+        function closeEmailPreview() {
+            const modal = document.getElementById('email-preview-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.style.display = 'none';
+            }
+            currentLeadForPreview = null;
+        }
+        
+        function sendEmailFromPreview() {
+            if (!currentLeadForPreview) {
+                showError('No lead selected for preview.');
+                return;
+            }
+            
+            // Check rate limits for free users
+            if (!hasPaid && emailsSent >= 5) {
+                showError('Free tier limited to 5 emails. Upgrade to send more emails.');
+                return;
+            }
+            
+            const subject = document.getElementById('preview-subject').value;
+            const body = document.getElementById('preview-body').value;
+            
+            if (!subject.trim() || !body.trim()) {
+                showError('Please fill in both subject and message.');
+                return;
+            }
+            
+            // Disable send button
+            const sendBtn = document.getElementById('send-from-preview-btn');
+            sendBtn.disabled = true;
+            sendBtn.textContent = '📧 Sending...';
+            
+            sendEmailWithCustomContent(currentLeadForPreview, subject, body)
+                .finally(() => {
+                    sendBtn.disabled = false;
+                    sendBtn.textContent = '📧 Send Email';
+                });
+        }
+        
+        // Updated sendEmail function to use preview
+        async function sendEmail(leadIndex) {
+            openEmailPreview(leadIndex);
+        }
+        
+        // Actual email sending function
+        async function sendEmailWithCustomContent(lead, subject, body) {
+            try {
+                const emailData = {
+                    to: lead.email,
+                    subject: subject,
+                    body: body,
+                    emailsSent: emailsSent,
+                    hasPaid: hasPaid,
+                    firstName: lead.first_name,
+                    company: lead.company,
+                    industry: lead.industry,
+                    personalize: false // We've already personalized it
+                };
+                
+                const response = await fetch(`${API_BASE}/.netlify/functions/send`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(emailData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    emailsSent++;
+                    showSuccess(`✅ Email sent successfully to ${lead.email}`);
+                    closeEmailPreview();
+                } else {
+                    if (response.status === 429) {
+                        showError(`${result.message} <a href="${result.upgradeUrl || '#upgrade'}" class="upgrade-btn" style="display: inline;">Upgrade Now</a>`);
+                    } else {
+                        throw new Error(result.message || 'Failed to send email');
+                    }
+                }
+            } catch (error) {
+                console.error('Email send error:', error);
+                showError(`❌ Failed to send email: ${error.message}`);
+            }
+        }
+        
+        // Load app configuration
+        async function loadAppConfig() {
+            try {
+                const response = await fetch(`${API_BASE}/.netlify/functions/config`);
+                if (response.ok) {
+                    appConfig = await response.json();
+                    console.log('✅ App config loaded:', appConfig);
+                } else {
+                    console.warn('⚠️ Failed to load app config, using defaults');
+                }
+            } catch (error) {
+                console.error('❌ Config loading error:', error);
+            }
+        }
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Initializing Luntra app...');
+            
+            // Load configuration first
+            try {
+                await loadAppConfig();
+            } catch (error) {
+                console.error('Config loading error:', error);
+            }
+            
+            // Ensure modal is hidden on page load
+            const modal = document.getElementById('email-preview-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.style.display = 'none';
+            }
             
             try {
-                await sendEmail(to, subject, html);
+                checkPaymentStatus();
             } catch (error) {
-                console.error('Email error:', error);
-                alert('Failed to send email. Please try again.');
+                console.error('Payment status check error:', error);
             }
-        });
-        
-        // Form submission
-        document.getElementById('searchForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const query = document.getElementById('searchQuery').value;
-            handleSearch(query);
-        });
-
-        // Enable search on Enter key
-        document.getElementById('searchQuery').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                const query = e.target.value;
-                handleSearch(query);
+            
+            try {
+                loadTemplates();
+            } catch (error) {
+                console.error('Template loading error:', error);
             }
-        });
-
-        // 1) delegate clicks on dynamically-rendered email buttons
-        document.addEventListener("click", async (e) => {
-            const btn = e.target.closest(".email-btn");
-            if (!btn) return;
-
-            const to = btn.dataset.to;
-            const company = btn.dataset.company || "";
-            const subject = `Quick intro re: cleaning for ${company || "your facility"}`;
-            const html = `
-                <p>Hi there,</p>
-                <p>I run Luntra, a lead-gen assistant for cleaning teams. 
-                Would you be open to a quick chat about improving janitorial coverage for ${company || "your facility"}?</p>
-                <p>Best,<br/>Luntra</p>
-            `;
-
-            await sendEmail(to, subject, html);   // uses your function exactly as written
+            
+            try {
+                setupSearchForm();
+            } catch (error) {
+                console.error('Search form setup error:', error);
+            }
+            
+            console.log('App initialization complete');
         });
         
-        // Add compose email button after search form
-        const composeBtn = document.createElement('button');
-        composeBtn.className = 'btn btn-secondary';
-        composeBtn.innerHTML = '✉️ Compose Email';
-        composeBtn.style.marginTop = '1rem';
-        composeBtn.onclick = () => showEmailComposer();
-        document.querySelector('.search-container').appendChild(composeBtn);
+        // Also hide modal immediately when script loads
+        const hideModal = () => {
+            const modal = document.getElementById('email-preview-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        };
         
-        // Initialize email stats
-        updateEmailStats();
-        
-        // Initialize with a default search or empty state
-        console.log('Frontend loaded. Ready to search leads via /api/leads and send emails via /api/email');
+        // Try to hide modal as soon as possible
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hideModal);
+        } else {
+            hideModal();
+        }
     </script>
 </body>
 </html>
