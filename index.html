@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUNTRA Outreach - Lead Search</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .search-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+        
+        .btn-secondary {
+            background: #64748b;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #475569;
+        }
+        
+        .quick-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+        
+        .results-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .results-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 2rem;
+            color: #dc2626;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            margin: 1rem;
+        }
+        
+        .leads-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .leads-table th,
+        .leads-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .leads-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .leads-table tr:hover {
+            background: #f9fafb;
+        }
+        
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .status-new {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .status-contacted {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .email-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .email-btn:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 LUNTRA Outreach</h1>
+        <p>AI-Powered Lead Generation & Outreach</p>
+    </div>
+
+    <div class="search-container">
+        <form class="search-form" id="searchForm">
+            <input 
+                type="text" 
+                class="search-input" 
+                id="searchQuery"
+                placeholder="Search for leads... (e.g., 'software companies in San Francisco')"
+                value=""
+            >
+            <button type="submit" class="btn btn-primary" id="searchBtn">
+                🔍 Search Leads
+            </button>
+        </form>
+        
+        <div class="quick-actions">
+            <button class="btn btn-secondary btn-small" onclick="quickSearch('tech startups')">
+                💻 Tech Startups
+            </button>
+            <button class="btn btn-secondary btn-small" onclick="quickSearch('marketing agencies')">
+                📈 Marketing Agencies
+            </button>
+            <button class="btn btn-secondary btn-small" onclick="quickSearch('e-commerce companies')">
+                🛒 E-commerce
+            </button>
+            <button class="btn btn-secondary btn-small" onclick="quickSearch('SaaS companies')">
+                ☁️ SaaS Companies
+            </button>
+        </div>
+    </div>
+
+    <!-- Email Composer -->
+    <div class="search-container" id="emailComposer" style="display: none;">
+        <h3>📧 Send Outreach Email</h3>
+        <form id="emailForm">
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">To:</label>
+                <input type="email" id="emailTo" class="search-input" placeholder="recipient@company.com" required>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Subject:</label>
+                <input type="text" id="emailSubject" class="search-input" placeholder="Partnership Opportunity" required>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message:</label>
+                <textarea id="emailBody" style="width: 100%; min-height: 200px; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: inherit; resize: vertical;" placeholder="Write your personalized outreach message here..." required></textarea>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button type="submit" class="btn btn-primary">📤 Send Email</button>
+                <button type="button" class="btn btn-secondary" onclick="hideEmailComposer()">Cancel</button>
+            </div>
+        </form>
+        
+        <!-- Email Stats -->
+        <div style="margin-top: 1rem; padding: 1rem; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <p style="margin: 0; font-size: 14px; color: #64748b;">
+                📊 Emails sent this session: <span id="emailCount">0</span> | 
+                Payment status: <span id="paymentStatus" style="font-weight: 500;">Free Tier</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="results-container" id="resultsContainer">
+        <div class="results-header">
+            <h2>Search Results</h2>
+            <p id="resultsCount">Enter a search query to find leads</p>
+        </div>
+        
+        <div id="loadingState" class="loading hidden">
+            <p>🔄 Searching for leads...</p>
+        </div>
+        
+        <div id="errorState" class="error hidden">
+            <p id="errorMessage">Something went wrong. Please try again.</p>
+        </div>
+        
+        <div id="resultsTable" class="hidden">
+            <table class="leads-table">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Contact</th>
+                        <th>Title</th>
+                        <th>Industry</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="leadsTableBody">
+                    <!-- Leads will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Email composer functions
+        function showEmailComposer(prefillEmail = '', prefillSubject = '') {
+            document.getElementById('emailComposer').style.display = 'block';
+            if (prefillEmail) document.getElementById('emailTo').value = prefillEmail;
+            if (prefillSubject) document.getElementById('emailSubject').value = prefillSubject;
+            document.getElementById('emailComposer').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function hideEmailComposer() {
+            document.getElementById('emailComposer').style.display = 'none';
+        }
+        
+        function updateEmailStats() {
+            const emailsSent = Number(localStorage.getItem("emailsSent") || "0");
+            const hasPaid = localStorage.getItem("hasPaid") === "true";
+            
+            document.getElementById('emailCount').textContent = emailsSent;
+            document.getElementById('paymentStatus').textContent = hasPaid ? 'Paid ✓' : 'Free Tier';
+        }
+        
+        // Your sendEmail function
+        async function sendEmail(to, subject, html) {
+            const emailsSent = Number(localStorage.getItem("emailsSent") || "0");
+            const hasPaid = localStorage.getItem("hasPaid") === "true";
+
+            const r = await fetch("/api/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ to, subject, body: html, emailsSent, hasPaid }),
+            });
+
+            if (r.status === 402) {
+                const { payLink } = await r.json();
+                window.open(payLink, "_blank");
+                return;
+            }
+
+            if (r.ok) {
+                localStorage.setItem("emailsSent", String(emailsSent + 1));
+                updateEmailStats();
+                alert("Email sent successfully! ✅");
+                hideEmailComposer();
+            } else {
+                const { error } = await r.json();
+                alert("Send failed: " + error);
+            }
+        }
+
+        // Your runSearch function
+        async function runSearch(query) {
+            console.log('Searching for:', query);
+            
+            try {
+                const r = await fetch(`/api/leads?q=${encodeURIComponent(query)}`);
+                
+                if (!r.ok) {
+                    throw new Error(`HTTP ${r.status}: ${r.statusText}`);
+                }
+                
+                const data = await r.json();
+                console.log('API Response:', data);
+                
+                return data.leads || data;
+            } catch (error) {
+                console.error('Search error:', error);
+                throw error;
+            }
+        }
+
+        // UI State Management
+        function showLoading() {
+            document.getElementById('loadingState').classList.remove('hidden');
+            document.getElementById('errorState').classList.add('hidden');
+            document.getElementById('resultsTable').classList.add('hidden');
+        }
+
+        function showError(message) {
+            document.getElementById('loadingState').classList.add('hidden');
+            document.getElementById('errorState').classList.remove('hidden');
+            document.getElementById('resultsTable').classList.add('hidden');
+            document.getElementById('errorMessage').textContent = message;
+        }
+
+        function showResults(leads) {
+            document.getElementById('loadingState').classList.add('hidden');
+            document.getElementById('errorState').classList.add('hidden');
+            document.getElementById('resultsTable').classList.remove('hidden');
+            
+            // Update results count
+            const count = leads ? leads.length : 0;
+            document.getElementById('resultsCount').textContent = 
+                count > 0 ? `Found ${count} lead${count !== 1 ? 's' : ''}` : 'No leads found';
+        }
+
+        // Render leads table
+        function renderLeads(leads) {
+            const tbody = document.getElementById('leadsTableBody');
+            
+            if (!leads || leads.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; color: #64748b; padding: 2rem;">
+                            No leads found for this search query
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            tbody.innerHTML = leads.map(lead => {
+                const email = lead.email || lead.contact_email || '';
+                const company = lead.company || 'Unknown Company';
+                const contactName = lead.contact_name || lead.name || 'N/A';
+                
+                return `
+                    <tr>
+                        <td><strong>${company}</strong></td>
+                        <td>${contactName}</td>
+                        <td>${lead.title || lead.job_title || 'N/A'}</td>
+                        <td>${lead.industry || 'N/A'}</td>
+                        <td>${lead.location || lead.city || 'N/A'}</td>
+                        <td>
+                            <span class="status-badge ${lead.status === 'contacted' ? 'status-contacted' : 'status-new'}">
+                                ${lead.status || 'new'}
+                            </span>
+                        </td>
+                        <td>
+                            ${email
+                                ? `<button class="email-btn" 
+                                     data-to="${email}" 
+                                     data-company="${company}">
+                                     📧 Email
+                                   </button>`
+                                : `<span style="opacity:.6">—</span>`}
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Main search handler
+        async function handleSearch(query) {
+            if (!query.trim()) {
+                showError('Please enter a search query');
+                return;
+            }
+            
+            showLoading();
+            
+            try {
+                const leads = await runSearch(query);
+                showResults(leads);
+                renderLeads(leads);
+            } catch (error) {
+                showError(error.message || 'Failed to search leads. Please try again.');
+            }
+        }
+
+        // Quick search function for buttons
+        function quickSearch(query) {
+            document.getElementById('searchQuery').value = query;
+            handleSearch(query);
+        }
+
+        // Email form submission
+        document.getElementById('emailForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const to = document.getElementById('emailTo').value;
+            const subject = document.getElementById('emailSubject').value;
+            const body = document.getElementById('emailBody').value;
+            
+            if (!to || !subject || !body) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Convert plain text to basic HTML
+            const html = body.replace(/\n/g, '<br>');
+            
+            try {
+                await sendEmail(to, subject, html);
+            } catch (error) {
+                console.error('Email error:', error);
+                alert('Failed to send email. Please try again.');
+            }
+        });
+        
+        // Form submission
+        document.getElementById('searchForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = document.getElementById('searchQuery').value;
+            handleSearch(query);
+        });
+
+        // Enable search on Enter key
+        document.getElementById('searchQuery').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const query = e.target.value;
+                handleSearch(query);
+            }
+        });
+
+        // 1) delegate clicks on dynamically-rendered email buttons
+        document.addEventListener("click", async (e) => {
+            const btn = e.target.closest(".email-btn");
+            if (!btn) return;
+
+            const to = btn.dataset.to;
+            const company = btn.dataset.company || "";
+            const subject = `Quick intro re: cleaning for ${company || "your facility"}`;
+            const html = `
+                <p>Hi there,</p>
+                <p>I run Luntra, a lead-gen assistant for cleaning teams. 
+                Would you be open to a quick chat about improving janitorial coverage for ${company || "your facility"}?</p>
+                <p>Best,<br/>Luntra</p>
+            `;
+
+            await sendEmail(to, subject, html);   // uses your function exactly as written
+        });
+        
+        // Add compose email button after search form
+        const composeBtn = document.createElement('button');
+        composeBtn.className = 'btn btn-secondary';
+        composeBtn.innerHTML = '✉️ Compose Email';
+        composeBtn.style.marginTop = '1rem';
+        composeBtn.onclick = () => showEmailComposer();
+        document.querySelector('.search-container').appendChild(composeBtn);
+        
+        // Initialize email stats
+        updateEmailStats();
+        
+        // Initialize with a default search or empty state
+        console.log('Frontend loaded. Ready to search leads via /api/leads and send emails via /api/email');
+    </script>
+</body>
+</html>

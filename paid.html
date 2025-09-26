@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - LUNTRA Outreach</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+            text-align: center;
+        }
+        
+        .success-container {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .success-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 1rem;
+        }
+        
+        .success-message {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .features-list {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .features-list h3 {
+            color: #059669;
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .features-list ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .features-list li {
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .countdown {
+            font-size: 1rem;
+            color: #9ca3af;
+            margin-top: 2rem;
+        }
+        
+        .redirect-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+        
+        .redirect-btn:hover {
+            background: #2563eb;
+        }
+        
+        .processing {
+            color: #6b7280;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">🎉</div>
+        <h1 class="success-title">Payment Successful!</h1>
+        <p class="success-message">
+            Thank you for upgrading to LUNTRA Outreach Pro! 
+            Your payment has been processed and you now have access to unlimited email sending.
+        </p>
+        
+        <div class="features-list">
+            <h3>✨ Pro Features Unlocked:</h3>
+            <ul>
+                <li>📤 Unlimited email outreach</li>
+                <li>🎯 Advanced lead generation</li>
+                <li>📊 Detailed analytics and tracking</li>
+                <li>🤖 AI-powered email personalization</li>
+                <li>⚡ Priority customer support</li>
+            </ul>
+        </div>
+        
+        <div class="processing" id="processingMessage">
+            🔄 Activating your Pro account...
+        </div>
+        
+        <div class="countdown" id="countdown">
+            Redirecting to dashboard in <span id="countdownNumber">3</span> seconds...
+        </div>
+        
+        <button class="redirect-btn" onclick="redirectNow()" id="redirectBtn" style="display: none;">
+            🚀 Go to Dashboard Now
+        </button>
+    </div>
+
+    <script>
+        // Mark user as paid immediately
+        console.log('Payment successful - activating Pro account');
+        localStorage.setItem("hasPaid", "true");
+        
+        // Optional: Clear any existing email count since they're now unlimited
+        // localStorage.removeItem("emailsSent");
+        
+        // Success tracking
+        const activationTime = new Date().toISOString();
+        localStorage.setItem("proActivatedAt", activationTime);
+        
+        // Countdown and redirect logic
+        let countdown = 3;
+        const countdownElement = document.getElementById('countdownNumber');
+        const processingElement = document.getElementById('processingMessage');
+        const redirectBtn = document.getElementById('redirectBtn');
+        
+        // Update processing message
+        setTimeout(() => {
+            processingElement.innerHTML = '✅ Pro account activated successfully!';
+            processingElement.style.color = '#059669';
+            redirectBtn.style.display = 'inline-block';
+        }, 1000);
+        
+        // Countdown timer
+        const countdownTimer = setInterval(() => {
+            countdown--;
+            if (countdownElement) {
+                countdownElement.textContent = countdown;
+            }
+            
+            if (countdown <= 0) {
+                clearInterval(countdownTimer);
+                redirectToApp();
+            }
+        }, 1000);
+        
+        // Redirect function
+        function redirectToApp() {
+            console.log('Redirecting to main app...');
+            window.location.href = "/";
+        }
+        
+        // Manual redirect function for button
+        function redirectNow() {
+            clearInterval(countdownTimer);
+            redirectToApp();
+        }
+        
+        // Handle page visibility (if user switches tabs)
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                // User returned to tab, ensure they're still getting redirected
+                console.log('User returned to payment success page');
+            }
+        });
+        
+        // Backup redirect in case something goes wrong
+        setTimeout(() => {
+            if (window.location.pathname === '/paid.html' || window.location.pathname === '/paid') {
+                console.log('Backup redirect triggered');
+                redirectToApp();
+            }
+        }, 10000); // 10 second backup
+        
+        console.log('Payment success page loaded. User marked as paid.');
+    </script>
+</body>
+</html>
